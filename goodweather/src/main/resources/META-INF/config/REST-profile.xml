@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       profile="rest">
+
+
+	<alias name="restWeatherProvider" alias="weatherProvider" />
+
+	<bean id="restWeatherProvider" class="goodweather.weatherproviders.RestWeatherProvider"
+	      lazy-init="false"
+	      p:KEY-ref="KEY"
+	      p:serviceSource-ref="serviceSource"
+	/>
+
+	<bean id="KEY" class="java.lang.String"
+	      lazy-init="false"
+	      c:_0="d5b955a26ea99839" />
+
+	<bean id="serviceSource" class="java.lang.String"
+	      c:_0="www.wunderground.com" />
+
+</beans>
